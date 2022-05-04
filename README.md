@@ -1,9 +1,10 @@
-# 📚 My Path Ahead
+# 📚 Absolute Pain
 
 
 
 ## 📒 자료구조
   * Fundementals of Data Structures in C
+  * Data Structures and Algorithms in C++
   * Moden Operating Systems Fourth Edition
 
 ## 📒 알고리즘 및 코딩테스트
