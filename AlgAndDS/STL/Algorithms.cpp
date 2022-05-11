@@ -14,12 +14,12 @@ Here are some examples.
 The  call
 */
 
-random_shuffle(c.begin(), c.end());
+// random_shuffle(c.begin(), c.end());
 //randomly reorders all the elements of the container c. The call
-i3 = find(i1,i2, el);
+// i3 = find(i1,i2, el);
 //returns an iterator indicating the position of element el in the range i1 up to, but not including, i2. The call
 
-n = count_if(i1, i2, oddNum);
+// n = count_if(i1, i2, oddNum);
 //counts with the algorithm count_if() the elements in the range indicated by iterator i1 and i2 for which a one-argument user-defined Boolean function oddNum() returns true.
 
 

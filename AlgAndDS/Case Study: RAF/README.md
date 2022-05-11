@@ -32,6 +32,7 @@ Personal::Personal() : nameLen(10), cityLen(10) {
     city = new char[cityLen + 1];
 }
 ```
+
 Note that we cannot initialize constants with assignemnts, as in 
 
 ```C++

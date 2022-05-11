@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
-using namespace std;
+
+
+
 /*
 In C++, the function call oerator () can be treated as any other operator;
 in particular, it can later be overloaded.
@@ -49,9 +51,9 @@ otherwise, it is the same. The new function can now be called, as in
 int main()
 {
     classf cf;
-    cout << sum2(cf, 2, 5) << endl;
+    std::cout << sum2(cf, 2, 5) << std::endl;
     // or simply,
-    cout << sum2(classf(), 2, 5) << endl;
+    std::cout << sum2(classf(), 2, 5) << std::endl;
 
     return 0;
     /*
@@ -88,7 +90,7 @@ double sum3(classf2 f, int n, int m)
 // and a call
 int main()
 {
-    cout << sum3(classf2(), 2, 5) << endl;
+    std::cout << sum3(classf2(), 2, 5) << std::endl;
 }
 
 /*
@@ -102,10 +104,10 @@ The syntac sum(-,2,5) is illegal. To circumvent the problem, the STL defines in 
 For example. unary minus is defined as
 */
 
-template <class T>
-struct negate : public unary_function<T, T>
+template<class T = void>
+struct negate
 {
-    T operator()(const T &x) const
+    constexpr T operator() (const T& x) const
     {
         return -x;
     }
@@ -113,7 +115,7 @@ struct negate : public unary_function<T, T>
 
 // Now after redefining function sum() so that it becomes a generic function:
 
-template <class F>
+template<class F>
 double sum(F f, int n, int m)
 {
     double result = 0;
@@ -125,4 +127,6 @@ double sum(F f, int n, int m)
 }
 
 // the function can also be called with the negate function object,
-sum(negate<double>(), 2, 5);
+int main(){
+        sum(negate<double>(), 2, 5);
+}

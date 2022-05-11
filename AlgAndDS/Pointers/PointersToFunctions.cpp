@@ -1,10 +1,10 @@
+#include <cmath>
 //Consider a simple function
 // f is the pointer to f(), *f is the function itself, and (*f)(7) is a func. call.
 
 double f(double x){
     return 2*x;
 }
-
 //Consider writing a function that computes a sum from n to m, of f of i.
 
 double sum (double (*f)(double), int n, int m){

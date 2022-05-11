@@ -66,7 +66,7 @@ iterator/void erase(first, last)
 T& front()
 //returns the first element of the vector
 
-const T& front() const 
+const T& front() const
 //returns the first element of the vector
 
 iterator insert(i, el = t())
@@ -134,8 +134,7 @@ vector(v)
 
 */
 
-
-//Figure 1.4
+// Figure 1.4
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -143,85 +142,88 @@ vector(v)
 
 using namespace std;
 
-template<class T>
-void printVector(char* s, const vector<T>& v) {
+template <class T>
+void printVector(char *s, const vector<T> &v)
+{
     cout << s << " = (";
-    if(v.size() == 0) {
+    if (v.size() == 0)
+    {
         cout << ")\n";
         return;
     }
     vector<T>::const_iterator i = v.begin();
-    for(;i < v.begin()+v.size()-1;i++)
+    for (; i < v.begin() + v.size() - 1; i++)
         cout << *i << ' ';
     cout << *i << ")\n";
 }
 
-bool f1(int n) {
+bool f1(int n)
+{
     return n < 4;
 }
 
-int main(){
-    int a[] = {1,2,3,4,5};
-    vector<int> v1; //v1 is empty, size = 0, capacity = 0
-    printVector("v1",v1);
+int main()
+{
+    int a[] = {1, 2, 3, 4, 5};
+    vector<int> v1; // v1 is empty, size = 0, capacity = 0
+    printVector("v1", v1);
 
-    for(int j = 1; j <= 5; j++)
-        v1.push_back(j); // v1 = (1,2,3,4,5), size = 5, capacity = 8
-    vector<int> v2(3,7); //v2 = (7,7,7)
+    for (int j = 1; j <= 5; j++)
+        v1.push_back(j);  // v1 = (1,2,3,4,5), size = 5, capacity = 8
+    vector<int> v2(3, 7); // v2 = (7,7,7)
 
+    vector<int>::iterator i1 = v1.begin() + 1;
+    vector<int> v4(v1);         // v4 = (1,2,3,4,5), size = 5, capacity = 5
+    vector<int> v5(5);          // v5 = (0,0,0,0,0)
 
-    vector<int>::iterator i1 = v1.begin()+1;
-    vector<int> v3(i1, i1+2); // v3 = (2,3), size = 2, capacity = 2
-    vector<int> v4(v1); // v4 = (1,2,3,4,5), size = 5, capacity = 5
-    vector<int> v5(5); // v5 = (0,0,0,0,0)
+    v5[1] = v5.at(3) = 9; // v5 = (0,9,0,9,0)
+    v4.reserve(6);        // v4 = (2,3), size = 2, capacity = 6
+    v4.resize(7);         // v4 = (1,2,3,4,5,0,0), size = 7, capacity = 10
+    v4.resize(3);         // v3 = (1,2,3), size = 3 , capacity = 10
+    v4.clear();           // v4 is empty, size = 10, capacity = //!10
 
-    v5[1] = v5.at(3) = 9; // v5 = (0,9,0,9,0)  
-    v3.reserve(6); //v3 = (2,3), size = 2, capacity = 6
-    v4.resize(7); //v4 = (1,2,3,4,5,0,0), size = 7, capacity = 10
-    v4.resize(3); //v3 = (1,2,3), size = 3 , capacity = 10
-    v4.clear(); //v4 is empty, size = 10, capacity = //!10
+    v4.insert(v4.end(), v4[1]);                        // v4 = (3)
+    v4.insert(v4.end(), v4.at(1));                     // v4 = (3, 3)
+    v4.insert(v4.end(), 2, 4);                         // v4 = (3, 3, 4 , 4)
 
-    v4.insert(v4.end(), v3[1]); //v4 = (3)
-    v4.insert(v4.end(), v3.at(1)); //v4 = (3, 3)
-    v4.insert(v4.end(), 2, 4); //v4 = (3, 3, 4 , 4)
-    v4.insert(v4.end(),v1.begin()+1, v1.end()-1); //v4 = (3,3,4,4,2,3,4)
+    v4.erase(v4.end() - 2);             // v4 = (3,3,4,4,2,4);
+    v4.erase(v4.begin(), v4.end() + 4); // v4 = (2,4)
+    v4.assign(3, 8);                    // v4 = (8,8,8)
 
-    v4.erase(v4.end()-2); // v4 = (3,3,4,4,2,4);
-    v4.erase(v4.begin(), v4.end()+4); //v4 = (2,4)
-    v4.assign(3,8); //v4 = (8,8,8)
-    v4.assign(a,a+3); //v4 = (1,2,3)
-    
-    vector<int> ::reverse_iterator i3 = v4.rbegin();
-    for(;i3 != v4.rend(); i3++)
+    vector<int>::reverse_iterator i3 = v4.rbegin();
+    for (; i3 != v4.rend(); i3++)
         cout << *i3 << ' '; // print: 3 2 1
     cout << endl;
 
-    //algorithms
+    // algorithms
 
-    v5[0] = 3; // v5 = (3,9,0,9,0)
+    v5[0] = 3;                               // v5 = (3,9,0,9,0)
     replace_if(v5.begin(), v5.end(), f1, 7); // v5 = (7,9,7,9,7)
-    v5[0] = 3; v5[2] = v5[4] = 0; //v5 = (3,9,0,9,0)
-    replace(v5.begin(), v5.end(), 0,7); //v5 = (3,9,7,9,7)
-    sort(v5.begin(), v5.end()); //v5 = (3,7,7,9,9)
-    sort(v5.begin(), v5.end(), greater<int> ()); //v5 = (9,9,7,7,3)
-    v5.front() = 2; // v5 = (2,9,7,7,3)
-    return 0;
-}
+    v5[0] = 3;
+    v5[2] = v5[4] = 0;                               // v5 = (3,9,0,9,0)
+    replace(v5.begin(), v5.end(), 0, 7);             // v5 = (3,9,7,9,7)
+    std::sort(v5.begin(), v5.end());                 // v5 = (3,7,7,9,9)
+    std::sort(v5.begin(), v5.end(), greater<int>()); // v5 = (9,9,7,7,3)
+    v5.front() = 2;                                  // v5 = (2,9,7,7,3)
 
-/*
+    /*
 The sorting algorithms allow for the same flexibility. In the eaxmple of sorting vector v4,
 v5 is sorted in ascending order. How can we sort it in descending order?
 
 One way is to sort it in ascending order and then reserve with the algorithm reverse().
-Another way is to force sort() to apply the operator > in making its decisions. 
+Another way is to force sort() to apply the operator > in making its decisions.
 This is done directly by using a function object as a parameter, as in
 */
-sort(v5.begin(), v5.end(), greater<int>());
-// or indirectly, as in
-sort(v5.begin(), v5.end(), f2);
-//where f2 is defined as 
-bool f2(int m, int n){
-    return m>n;
+    std::sort(v5.begin(), v5.end(), greater<int>());
+    // or indirectly, as in
+    std::sort(v5.begin(), v5.end(), f2);
+    return 0;
+}
+
+// where f2 is defined as
+bool f2(int m, int n)
+{
+    return m > n;
 }
 /*
 The first method is preferable, but this is possible only because the function object
@@ -236,56 +238,64 @@ when we need to sort objects more complex than integers and we need to use diffe
 Consider the following class definition:
 */
 
-class Person {
+class Person
+{
 
-    public:
-    Person(char *n = "", int a = 0){
-        name = new char[strlen(n)+1];
+public:
+    Person(char *n = "", int a = 0)
+    {
+        name = new char[strlen(n) + 1];
         strcpy(name, n);
         age = a;
     }
 
-    bool operator==(const Person& p) const {
-        return strcmp(name, p.name) == 0 && age == p.age;      
+    bool operator==(const Person &p) const
+    {
+        return strcmp(name, p.name) == 0 && age == p.age;
     }
 
-    bool operator<(const Person& p) const {
+    bool operator<(const Person &p) const
+    {
         return strcmp(name, p.name) < 0;
     }
 
-    bool operator>(const Person& p) const {
+    bool operator>(const Person &p) const
+    {
         return !(*this == p) && !(*this < p);
     }
 
-    private:
-        char* name;
-        int age;
-        friend bool lesserAge(const Person&, const Person&);
+private:
+    char *name;
+    int age;
+    friend bool lesserAge(const Person &, const Person &);
 };
-//Now with the declaration
-vector<Person> v6(1,Person("Gregg", 25));
-//adding to v6 two more objects
+
+// Now with the declaration
+vector<Person> v6(1, Person("Gregg", 25));
+// adding to v6 two more objects
+int main(){
 v6.push_back(Person("Ann", 30));
 v6.push_back(Person("Bill", 20));
 
-//and executing
-sort(v6.begin(), v6,end());
+// and executing
+std::sort(v6.begin(), v6.end());
 
-//v6 is sorted in ascending order because the version of sort() with only two iterator arguments use the operator < overloaded in class Person.
-//The call
-sort(v6.begin(), v6,end(), greater<Person>());
+// v6 is sorted in ascending order because the version of sort() with only two iterator arguments use the operator < overloaded in class Person.
+// The call
 
-//changes v6 into descended order because this version of sort relies on the operator > overloaded for this class.
+std::sort(v6.begin(), v6.end(), greater<Person>());
+}
+// changes v6 into descended order because this version of sort relies on the operator > overloaded for this class.
 
+// What Do we need to do to sort the objects by age?
+// In this case, a function need to be defined as in
 
-
-//What Do we need to do to sort the objects by age?
-//In this case, a function need to be defined as in
-
-bool lesserAge(const Person& p1, const Person& p2){
+bool lesserAge(const Person &p1, const Person &p2)
+{
     return p1.age < p2.age;
 }
 
-//and then used as an argument in the call to sort().
-sort(v6.begin(), v6,end(), lesserAge);
-
+// and then used as an argument in the call to sort().
+int main(){
+std::sort(v6.begin(), v6.end(), lesserAge);
+}
