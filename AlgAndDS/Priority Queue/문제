@@ -1,0 +1,17 @@
+Input (Standard input)
+
+
+Each line of input consists of at most three integers.
+If the first integer is 0, print the output and terminate the program.
+If the first integer is 1, insert the second integer.
+If the first integer is 2, extract the maximum number from the priority queue.
+If the first integer is 3, substitute the third integer for the element indexed by the
+second number. After the modification, the heap structure must be restored.
+Assume that the smallest index of the priority queue is 1.
+When the time parent node changes its value with one of child nodes value, if right
+child value is same with left child value, parent node should change its value with right
+child node.
+
+
+Output (Standard output)
+In the first line, print the extracted elements. 

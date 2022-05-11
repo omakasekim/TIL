@@ -1,0 +1,7 @@
+Input (Standard input)
+
+In the first line, the number of input keys N is given ( 1 <= N <= 100,000).
+In the next N lines, a key is given in each line.
+
+Output (Standard Output)
+Print the input keys sorted in decreasing order.

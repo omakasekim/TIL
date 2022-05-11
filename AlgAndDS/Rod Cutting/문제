@@ -1,0 +1,11 @@
+Input (Standard input)
+
+In the first line, an integer N is given which means the length of Rod (1 ≤ N ≤ 100). In the
+second line, N integers are given which means pi (pi-1 ≤ pi ≤ pi+1). pi is the value when the
+length of Rod is i.
+
+Output (Standard output)
+
+In the first line, print the maximum profit which could be made by the Rod's length of
+N.
+In the next line, print the lengths of Rod for the maximum profit in non-decreasing order
