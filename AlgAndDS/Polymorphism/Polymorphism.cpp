@@ -3,6 +3,13 @@
 
 using namespace std;
 
+
+/* Polymorphism refers to the ability of acquiring many forms. In the context of OOP
+this means that the same function name denoted many functions that are members of different objects. Consider the following example:
+*/
+
+
+
 class Class1
 {
 public:
