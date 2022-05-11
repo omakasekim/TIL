@@ -99,20 +99,23 @@ The mechanism of function pointers is insufficient for built in operators.
 How could we pass a unary minus to sum()?
 
 The syntac sum(-,2,5) is illegal. To circumvent the problem, the STL defines in <function> function objects for the common c++ operators.
-For example. unary minus is defined as 
+For example. unary minus is defined as
 */
 
-template<class T>
-struct negate : public unary_function<T, T>{
-    T operator() (const T& x) const {
+template <class T>
+struct negate : public unary_function<T, T>
+{
+    T operator()(const T &x) const
+    {
         return -x;
     }
 };
 
-//Now after redefining function sum() so that it becomes a generic function:
+// Now after redefining function sum() so that it becomes a generic function:
 
-template<class F>
-double sum(F f, int n, int m) {
+template <class F>
+double sum(F f, int n, int m)
+{
     double result = 0;
     for (int i = n; i <= m; i++)
     {
@@ -121,6 +124,5 @@ double sum(F f, int n, int m) {
     return result;
 }
 
-//the function can also be called with the negate function object,
-sum(negate<double>(),2,5);
-
+// the function can also be called with the negate function object,
+sum(negate<double>(), 2, 5);
