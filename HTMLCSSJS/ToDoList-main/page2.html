@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="/css/page2.css" />
+    <title>Daily to-do List</title>
+  </head>
+  <body>
+    <header style="text-align: center;">
+      <a href="/index.html" class="navbutton">Home</a>
+      <a href="/page1.html" class="navbutton">Calendar</a>
+      <a href="/page2.html" class="navbutton">Todo List</a>
+      <a href="/page3.html" class="navbutton">Countdown Timer</a>
+    </header>
+
+    <div class="container">
+      <h2>Today's todo-list</h2>
+      <p>
+        <label for="new-task">Add Item</label
+        ><input id="new-task" type="text" /><button>Add</button>
+      </p>
+
+      <h3>Todo</h3>
+      <ul id="incomplete-tasks"></ul>
+
+      <h3>Completed</h3>
+      <ul id="completed-tasks"></ul>
+    </div>
+
+    <script src="/js/page2.js"></script>
+  </body>
+</html>

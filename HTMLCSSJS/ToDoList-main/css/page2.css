@@ -1,0 +1,162 @@
+/* Basic Style */
+
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+
+:root{
+  --hue: 223;
+  --bg1: hsl(var(--hue),10%,90%);
+  --bg2: hsl(var(--hue),10%,80%);
+  --fg1: hsl(var(--hue),10%,10%);
+  --fg2: hsl(var(--hue),10%,20%);
+  --primary: hsl(var(--hue),90%,55%);
+  --greeny:#03c9a9;
+}
+body {
+  box-sizing: border-box;
+  background: var(--greeny);
+
+  color: #333;
+  font-family: Lato, sans-serif;
+}
+.container {
+  border-radius: 3px;
+  padding: 20px 20px 60px 20px;
+  display: block;
+  background: #fff;
+  width: 820px;
+  margin: 90px auto 0;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li * {
+  float: left;
+}
+li,
+h3 {
+  clear: both;
+  list-style: none;
+}
+input,
+button {
+  outline: none;
+}
+button {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+button:hover {
+  color: #333;
+}
+/* Heading */
+h3,
+label[for="new-task"] {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 30px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+input[type="text"]:focus {
+  color: #333;
+}
+
+/* New Task */
+label[for="new-task"] {
+  display: block;
+  margin: 0 0 20px;
+}
+input#new-task {
+  float: left;
+  width: 736px;
+}
+p > button:hover {
+  color: #0fc57c;
+}
+
+/* Task list */
+li {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 650px;
+  padding: 0 0 0 11px;
+}
+li > input[type="text"] {
+  width: 226px;
+}
+li > .delete:hover {
+  color: #cf2323;
+}
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+ul li input[type="text"] {
+  display: none;
+}
+
+ul li.editMode input[type="text"] {
+  display: block;
+}
+
+ul li.editMode label {
+  display: none;
+}
+
+
+/*navbar*/
+
+.navbutton {
+  background-color: wheat;
+  border-radius: 15%;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  text-decoration: none;
+}

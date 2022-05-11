@@ -1,0 +1,7 @@
+replace jquery with vanilla js
+
+rename all variables
+
+restructure files
+
+change design
