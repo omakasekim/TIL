@@ -8,7 +8,7 @@
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
   * Fundementals of Data Structures in C
-  * Data Structures and Algorithms in C++
+  * Introduction to Algorithms 3rd Edition
   * Moden Operating Systems Fourth Edition
 
 ## 📒 알고리즘 및 코딩테스트
