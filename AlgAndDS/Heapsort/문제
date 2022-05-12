@@ -1,0 +1,7 @@
+Input (Standard input)
+
+The number of input keys N (1 ≤ N ≤ 100,000), and an integer k are given (1 ≤ k ≤ 30) in the first line. In the next N lines, a key is given in each line. 
+
+Output (Standard Output)
+In the first line, print k biggest elements in decreasing order.
+In the second line, print the heap after extracting k biggest elements. 

@@ -1,0 +1,9 @@
+Input (Standard input)
+
+In the first line, the number of input keys N (1 ≤ N ≤ 100000) and the range of input keys
+M (1 ≤ M ≤ 100000) and number of query ranges K (1 ≤ K ≤ 100000) are given. In the next
+K lines, two numbers A[i] and B[i] are given. (1 ≤ i ≤ K) In the next N lines, a key is given
+in each line.
+
+Output (Standard output)
+print the number of keys in range A[i] ≤ keys ≤ B[i]. (1 ≤ i ≤ K) 

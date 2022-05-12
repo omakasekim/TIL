@@ -1,0 +1,11 @@
+Input (Standard input)
+
+In first line, an integer N is given which is the number of matrices (1 ≤ N ≤ 100).
+In the next line, N+1 integers are given where the ith integer is pi
+
+Output (Standard output)
+
+In first line, print minimum scalar multiplications to compute the product.
+In the next line, print an optimal parenthesization of A1, A2, …, An. When printing it, just
+print the parenthesis, and the number of matrix without ‘A’, and every parenthesis and
+number must be separated by a space.

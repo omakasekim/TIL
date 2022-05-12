@@ -1,0 +1,15 @@
+Input (Standard input)
+
+In first line, the integer N is given, which means the number of station (1 ≤ N ≤ 100).
+In second line, the two integers e1, e2 are given (1 ≤ ei ≤ 100).
+In third line, the two integers x1, x2 are given.
+In fourth line, the N integers a1,1, a1,2, … , a1,n are given (1 ≤ a1,j ≤ 100).
+In fifth line, the N integers a2,1, a2,2, … , a2,n are given (1 ≤ a2,j ≤ 100).
+In sixth line, the N integers t1,1, t1,2, … , t1,n-1 are given (1 ≤ t1,j ≤ 100).
+In seventh line, the N integers t2,1, t2,2, … , t2,n-1 are given (1 ≤ t2,j ≤ 100).
+
+Output (Standard output)
+
+In first line, print the fastest assembly time.
+In the next N line, print each process. Print with the output form given below:
+Print the ith line's jth station as 'i j', and print as increasing order of the station

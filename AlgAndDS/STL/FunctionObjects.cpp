@@ -107,7 +107,7 @@ For example. unary minus is defined as
 template<class T = void>
 struct negate
 {
-    constexpr T operator() (const T& x) const
+    T operator() (const T& x) const
     {
         return -x;
     }

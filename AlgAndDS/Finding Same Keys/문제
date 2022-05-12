@@ -1,0 +1,9 @@
+Input (Standard input)
+
+In the first line, the number of input keys N and M (1≤N, M≤100000) are given where
+N is the number of keys in set A and M is the number of keys in set B.
+The keys in set A are given in the second line and the keys in set B are given in the third
+line.
+
+Output (Standard output)
+print the number of keys both in A and B. 
