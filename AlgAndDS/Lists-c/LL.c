@@ -1,75 +1,123 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// A node used in linked list.
+struct Node
+{
+    int data;
+    struct Node *next;
+};
 
-struct Node{
-  int data;
-  struct Node* next;
-}Node;
+// Insert at front of the list
+void push(struct Node **head, int data);
 
-struct Node* createNode(int data);// done
+// Given a prev node, insert after the given node
+void insertAfter(struct Node *prev_node, int data);
 
-//add a index parameter to add at certain place
-void insertNode(struct Node* HEAD, struct Node* newNode); //done
+// Given a reference to the head, append a new node at the end
+void append(struct Node **head, int data);
 
-int deleteNode(struct Node* HEAD, int data); //done?
+// Given a reference to the head and a key, delete the first occurence of key in LL.
+void deleteNode(struct Node **head, int key);
 
-int deleteNode(struct Node* HEAD, int index); 
-//void insertNode(struct Node* HEAD, struct Node* newNode, int index);
+// Print the content of the linked list starting from the given node
+void print(struct Node *start);
 
-int main(){
-
-  struct Node *Head = NULL;
-  
-  return 0;
-
-}
-struct Node* createNode(int data){
-  struct Node* temp = malloc(sizeof(struct Node));
-  temp->data = 0;
-  temp->next = NULL;
-
-  return temp;
+int main()
+{
+    struct Node *head = NULL;
+    // create a main function that completes all given functions.
+    return 0;
 }
 
-void insertNode(struct Node* HEAD, struct Node* newNode){
+void push(struct Node **head, int data)
+{
+    // complete the function
 
-  struct Node* temp = malloc(sizeof(struct Node));
-  
-  if(HEAD!=NULL){
-    temp = HEAD;
-  }
-  while(temp->next != NULL){
-    temp = temp->next;
-  }
-  temp->next = newNode;
-  newNode->next = NULL;
+    /*
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
 
-  free(temp);
+    new_node->data = data;
+    new_node->next = head;
+    head = new_node;
+    */
 }
 
-int deleteNode(struct Node* HEAD, int data){
-  //struct Node* temp = malloc(sizeof(struct Node));
-  //temp = HEAD;
+void insertAfter(struct Node *prev_node, int data)
+{
+    // complete the function
+    /*
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
 
-  if(HEAD == NULL) return 1;
-  struct Node* temp = HEAD;
+    if(prev_node == NULL) return;
+
+    new_node->data = data;
+    new_node->next = prev_node->next;
+    prev_node->next = new_node;
+    */
+}
+
+void append(struct Node **head, int data)
+{
+    // complete the function
+    /*
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    new_node->data = data;
+    new_node->next = NULL;
+
+    struct Node* temp = head;
+
+    if(head == NULL) return;
 
     while(temp->next != NULL){
-      if(temp->next->data == data){
-
-        struct Node* rmv = temp;
-        rmv->next = temp->next;
-        rmv = rmv->next;
-        
-        rmv->data = 0;
-        rmv->next = NULL;
-        free(rmv);
-        temp->next = temp->next->next;
-        free(temp);
-        return 0;//properly deleted
-      }
-      temp = temp->next;
+        temp = temp->next;
     }
-  return -1; // does not exist
+
+    temp->next = new_node;
+    */
+}
+
+void deleteNode(struct Node **head, int key)
+{
+    // complete the function
+
+    /*
+    struct Node* temp = head;
+    struct Node* prev = head;
+
+    if(head == NULL) return;
+
+    if(temp != NULL && temp->data == key){
+        head = temp->next;
+        free(temp);
+        return;
+    }
+
+    while(temp != NULL && temp->data != key){
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if(temp==NULL) return;
+    prev->next = temp->next;
+
+    free(temp);
+    */
+}
+
+void print(struct Node *start)
+{ // complete the function
+
+/*
+    if(start == NULL){
+        printf("Linked List is empty");
+        return;
+    }
+
+    while(start->next != NULL){
+        printf("%d->",start->data);
+    }
+    printf("end");
+    return;
+    */
 }
