@@ -1,6 +1,6 @@
 //2019072351_김정훈_12838 
 #include <iostream>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 #include <string>
 #include <sstream>
 #include <stdio.h>

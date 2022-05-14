@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <stdlib.h>
+#include <limits.h>
 
 void RodCutting(int* arr, int len) {
 	int* rod = (int*)malloc(sizeof(int)*len+1); 

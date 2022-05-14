@@ -1,6 +1,11 @@
 //2019072351_김정훈_12838 
-#include<bits/stdc++.h>
+//#include<bits/stdc++.h>
+#include <utility>
+#include <list>
+#include <iterator>
 #include <stdio.h>
+#include <queue>
+
 #define INF 9999999
 using namespace std;
 int N,M;

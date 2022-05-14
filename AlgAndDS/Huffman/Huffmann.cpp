@@ -1,7 +1,12 @@
 //2019072351_김정훈_12838 
 #include <string>
 #include <stdio.h>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <vector>
+#include <queue>
+#include <iostream>
+
+
 using namespace std;
 
 struct intpair {
