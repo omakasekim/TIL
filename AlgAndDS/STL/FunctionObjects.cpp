@@ -130,3 +130,7 @@ double sum(F f, int n, int m)
 int main(){
         sum(negate<double>(), 2, 5);
 }
+
+
+
+//copy const, constructor, destructor creating class
