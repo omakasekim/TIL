@@ -14,7 +14,6 @@
 body {
   box-sizing: border-box;
   background: var(--greeny);
-
   color: #333;
   font-family: Lato, sans-serif;
 }
@@ -32,7 +31,6 @@ h2 {
   font-weight: 300;
   letter-spacing: 0.03em;
 }
-
 ul {
   margin: 0;
   padding: 0;
@@ -88,7 +86,6 @@ input[type="text"] {
 input[type="text"]:focus {
   color: #333;
 }
-
 /* New Task */
 label[for="new-task"] {
   display: block;
@@ -101,7 +98,6 @@ input#new-task {
 p > button:hover {
   color: #0fc57c;
 }
-
 /* Task list */
 li {
   overflow: hidden;
@@ -125,13 +121,11 @@ li > input[type="text"] {
 li > .delete:hover {
   color: #cf2323;
 }
-
 /* Completed */
 #completed-tasks label {
   text-decoration: line-through;
   color: #888;
 }
-
 /* Edit Task */
 ul li input[type="text"] {
   display: none;
@@ -144,8 +138,6 @@ ul li.editMode input[type="text"] {
 ul li.editMode label {
   display: none;
 }
-
-
 /*navbar*/
 
 .navbutton {
