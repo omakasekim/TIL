@@ -1,5 +1,6 @@
 # 📚 Absolute Pain
 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=omakasekim)](https://github.com/anuraghazra/github-readme-stats)
 
 
 ## 📒 자료구조 및 알고리즘
