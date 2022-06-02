@@ -4,7 +4,8 @@
 */
 println("Hello") // 한 줄짜리 주석
 
-val timeInSeconds = 15
+
+val timeInSeconds: Int = 15
 
 fun main() {
     val a = readLine()!!.toInt()
