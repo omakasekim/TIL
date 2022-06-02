@@ -95,6 +95,7 @@ int main() {
         }
     }
 
+
     cout << fixed;
     cout.precision(2);
     cout << sum;
