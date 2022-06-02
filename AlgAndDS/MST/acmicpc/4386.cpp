@@ -27,21 +27,21 @@ using namespace std;
  
 int N; // Number of stars
 double x, y; //container for coordinates
-int connect[101]; //parent table
+int par[101]; //parent table
 vector<pair<double, double>> stars; //x&y coordinates
 vector<pair<double, pair<int, int>>> v; // cost (of),ith, jth star
 double rs = 0; //result of MST
  
 //recursive function to find parent 
 int find(int x){
-    if(connect[x] == x)
+    if(par[x] == x)
         return x;
-    return connect[x] = find(connect[x]);
+    return par[x] = find(par[x]);
 }
  
 double calcDist(double x1, double y1, double x2, double y2)
 {
-    return sqrt(pow(x2-x1, 2)+pow(y2-y1, 2));
+    return sqrt(pow(x2-x1, 2) + pow(y2-y1, 2));
 }
  
  double Haversine(double x1, double y1, double x2, double y2){
@@ -81,7 +81,7 @@ int main()
     }
     //reset connect array so that ith element points to itslef (by default it is its own parent)
     for(int i=0; i<N; i++)
-        connect[i] = i;
+        par[i] = i;
     //sort weight of edges
     sort(v.begin(), v.end());
  
@@ -95,7 +95,7 @@ int main()
         int b = find(y);
         //if ancestors are different == not connected, connect them and add weight to result
         if(a!=b){
-            connect[a] = b;
+            par[a] = b;
             rs += cost;
         }
     }

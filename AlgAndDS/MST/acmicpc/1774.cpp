@@ -35,7 +35,7 @@ using namespace std;
 int N, M;
 
 vector<pair<int, int>> V;
-vector<int> parents;
+int parents[1001];
 vector<pair<double, pair<int, int>>> E;
 
 
@@ -64,7 +64,6 @@ int main() {
     double sum = 0.0;
 
     V.assign(N + 1, pair<int, int>());
-    parents.assign(N + 1, 0);
 
     for(int i = 0; i<=N; i++) 
         parents[i] = i;
