@@ -13,10 +13,10 @@ You can choose the month with the button above and fill in the boxes showing the
 
 ### P2 (To-do List Page)
 
-<img src="/dump/page2.png">
+<img src="/Web/ToDoList-main/dump/page2.png">
 Show the day’s events on the top(what you have written on Calendar Page), and editable to-do list, and a monthly calendar that shows how many to do things you have planned for each day.
 
 ### P3 (Timer Page)
 
-<img src="/dump/page3.png">
+<img src="/Web/ToDoList-main/dump/page3.png">
 You can choose what background image to show up. There is also a timer that you could set a certain time limit, so you could use to study.
