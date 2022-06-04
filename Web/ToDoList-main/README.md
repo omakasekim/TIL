@@ -8,7 +8,7 @@ As a high school student who is now going to college, I have learned that schedu
 
 ### P1 (Monthly Calendar Page)
 
-<img src="/dump/page1.png">
+<img src="/Web/ToDoList-main/dump/page1.png">
 You can choose the month with the button above and fill in the boxes showing the date with events or work to do on that day
 
 ### P2 (To-do List Page)
