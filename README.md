@@ -2,7 +2,6 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=omakasekim&langs_count=10)](https://github.com/anuraghazra/github-readme-stats)
 
-
 ## 📒 자료구조 및 알고리즘
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
