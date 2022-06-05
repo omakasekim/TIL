@@ -1,7 +1,7 @@
 # 📚 Absolute Pain
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=omakasekim&langs_count=20)](https://github.com/anuraghazra/github-readme-stats)
-
+![](https://tokei.rs/b1/github/omakasekim/TIL)
 ## 📒 자료구조 및 알고리즘
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
