@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script type="importmap">
+        {
+            "imports": {
+              "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+              "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+            }
+          }
+    </script>
+
+    <script type="module">
+        import {GLTFLoader} from 'GLTFLoader';
+        import * as THREE from 'three';
+        import {OrbitControls} from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
+
+        let scene = new THREE.Scene();
+        let renderer = new THREE.WebGLRenderer({
+            canvas : document.querySelector('#canvas'),
+            antialias : true
+        });
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        
+        let camera = new THREE.PerspectiveCamera(40, 1);
+
+        scene.background = new THREE.Color('white');
+        const controls = new OrbitControls(camera, renderer.domElement);
+
+        camera.position.set(0,0,5);
+        controls.update();
+
+        let loader = new GLTFLoader();
+        loader.load('shiba/scene.gltf', function(gltf){
+            scene.add(gltf.scene);
+            renderer.render(gltf.scene, camera);
+
+            function animate(){
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render( scene, camera );
+            }
+            animate();
+        });
+
+    </script>
+</body>
+</html>
