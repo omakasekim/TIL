@@ -40,7 +40,6 @@ todayBtn.on("click", function () {
     moveNext(step, true);
   }
 });
-
 //higlight the cel of current day
 dataCel.each(function () {
   if ($(this).data("day") === today) {
@@ -48,7 +47,6 @@ dataCel.each(function () {
     fillEventSidebar($(this));
   }
 });
-
 //window event creator
 addBtn.on("click", function () {
   winCreator.addClass("isVisible");
@@ -87,12 +85,10 @@ saveBtn.on("click", function () {
       fillEventSidebar($(this));
     }
   });
-
   winCreator.removeClass("isVisible");
   $("body").removeClass("overlay");
   $("#addEvent")[0].reset();
 });
-
 //fill sidebar event info
 function fillEventSidebar(self) {
   $(".c-aside__event").remove();
