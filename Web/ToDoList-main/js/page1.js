@@ -19,6 +19,8 @@ var monthText = [
   "November",
   "December",
 ];
+
+
 var indexMonth = month;
 var todayBtn = $(".c-today__btn");
 var addBtn = $(".js-event__add");
@@ -183,7 +185,7 @@ function movePrev(fakeClick, indexPrev) {
     }
   }
 }
-
+x
 //months paginator
 function buttonsPaginator(buttonId, mainClass, monthClass, next, prev) {
   switch (true) {
