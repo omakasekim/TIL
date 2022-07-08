@@ -8,8 +8,16 @@
 </head>
 <body>
     <!---
-    Q1)100 미만의 정수만을 입력받는 프로그램을 작성하라. 100보다 큰 정수가 들어오면 alert를 띄워라 .
+    Q1)100 미만의 정수만을 입력받는 프로그램을 작성하라. 
+    100보다 큰 정수가 들어오면 alert를 띄워라 .
+    create a program that rejects all values above 100.
+    The program should send an alert() when value > 100
+        //use prompt() and alert()
+
     Q2) 1부터 100까지 합을 구하는 프로그램을 작성 해본다
+            create a program that returns the sum from 1 to 100
+            also use prompt() and alert()
+
     Q3)태양계의 모든 행성을 배열에 저장 후  출력한다.
     Q4) 0 부터 1,000,000 까지 더하는데 걸리는 시간을 구하라.
     Q5) 문자열을 입력받아서 첫 번째 글자를 대문자로 변경하라. 
@@ -18,8 +26,30 @@
     Q8) 배열 요소의 값을 받으면 그 요소를 배열에서 찾아서 인덱스를 반환하는 함수 find(arr,value)를 작성하라. 없다면 -1를 출력하라
     Q9)  0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. 
     numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.       
+    
     --->
 
+        <script>
+           
+           //For given arbitrary integers a, b and c, 
+           //print true if a triangle can be made
+           var a = Number(prompt("A"));
+           var b = Number(prompt("B"));
+           var c = Number(prompt("C"));
+           //alert((((a<b?a:b)<c?(a<b?a:b):c)+((a+b+c)-((a>b?a:b)>c?(a>b?a:b):c)-((a<b?a:b)<c?(a<b?a:b):c)))>((a>b?a:b)>c?(a>b?a:b):c));
+
+           var list = [];
+           list.push(a,b,c);
+           var min = Math.min(...list);
+           var max = Math.max(...list);
+           var mid = a+b+c - max - min;
+           if(mid+min >= max){
+            alert("true");
+           }else{
+            alert("false");
+           }
+
+        </script>
 
 </body>
 </html>

@@ -26,13 +26,11 @@ void Merge(int arr[], int l, int m, int r)
         } 
         k++; 
     } 
-  
     while (i < LSize) { 
         arr[k] = L[i]; 
         i++; 
         k++; 
     } 
-  
     while (j < RSize) { 
         arr[k] = R[j]; 
         j++; 
@@ -61,6 +59,7 @@ int main()
     int N;
     scanf("%d",&N);
     int arr[N];
+    //6 5 12 10 9 1
     for(int cnt=0;cnt<N;cnt++){
         scanf("%d",&arr[cnt]);
     }

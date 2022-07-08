@@ -5,7 +5,6 @@ class BST {
     public: 
     int data;
     BST *left, *right;
- 
 
     BST();
     BST(int);
@@ -29,20 +28,17 @@ BST ::BST(int value)
     left = right = NULL;
 }
 BST* BST ::Insert(BST* root, int value)
-{
+{ 
     if (!root) {
         return new BST(value);
     }
- 
     if (value > root->data) {
-
         root->right = Insert(root->right, value);
     }
-    else {
-
+    else if(value < root->data){
         root->left = Insert(root->left, value);
     }
- 
+
     return root;
 }
 
@@ -73,11 +69,8 @@ int main()
     b.Insert(root, 14);
     b.Insert(root, 111);
     b.Insert(root, 985);
-    
     b.printLevelOrder(root);
-    
     b.Insert(root, 65);
- 
     b.printLevelOrder(root);
     return 0;
 }
@@ -118,7 +111,6 @@ int BST ::height(BST* node)
         /* compute the height of each subtree */
         int lheight = height(node->left);
         int rheight = height(node->right);
- 
         /* use the larger one */
         if (lheight > rheight) {
             return (lheight + 1);
