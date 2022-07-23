@@ -1,33 +1,17 @@
-#include <iostream>
-using namespace std;
-
+#include <stdio.h>
+int min(int a, int b){
+   return a < b ? a : b; 
+}
+int a, b, sm, mn = 1e9;
 int main() {
-  ios_base::sync_with_stdio(NULL);
-  cin.tie(NULL);
-  cout.tie(NULL);
-
-  int stockPrice[1000000];
-  int T_n, D_n;
-  cin>>T_n;
-
-  long long profitSum=0;
-  int maxStock=0;
-
-  for(int i = 0; i<T_n ; ++i){
-    cin>>D_n;
-    for(int day=0; day< D_n; ++day)
-      cin>>stockPrice[day];
-    
-    profitSum=0;
-    maxStock=0;
-    for(int day=D_n -1 ; day>=0 ; --day){
-      if(stockPrice[day] < maxStock)
-        profitSum += (maxStock - stockPrice[day]);
-      else
-        maxStock = stockPrice[day];
-    }
-    cout<<profitSum<<endl;
-  }
-
-  return 0;
+	scanf("%d %d", &a, &b);
+	for (int i = 1; i*i <= b; i++) {
+		if (i*i >= a && i*i <= b) {
+			mn = min(mn, i*i);
+			sm += i*i;
+		}
+	}
+    if (!sm) printf("-1");
+    else printf("%d\n%d", sm, mn);
+	return 0;
 }
