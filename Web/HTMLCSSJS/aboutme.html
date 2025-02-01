@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - My Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    
+    /* Fixed Navigation Bar */
+    
+    header {
+      background: #333;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-links li {
+    margin: 0 10px;
+  }
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: #4ca1af;
+  }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    header nav ul li { margin: 0 15px; }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover { color: #4ca1af; }
+    
+    /* Two-Column Layout */
+    .container {
+      display: flex;
+      margin-top: 70px; /* space for the fixed header */
+      min-height: calc(100vh - 70px);
+    }
+    /* Left Panel */
+    .left-panel {
+      width: 33.33%;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .left-panel img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    .left-panel img:hover { transform: scale(1.05); }
+    .left-panel h2 { font-size: 28px; margin-bottom: 10px; }
+    .left-panel p { font-size: 16px; line-height: 1.4; }
+    .extra-info {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .extra-info h3 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 5px;
+    }
+    .extra-info ul {
+      list-style: disc;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    .extra-info ul li { margin-bottom: 5px; }
+    
+    /* Right Panel */
+    .right-panel {
+      flex: 1;
+      background: #f4f4f4;
+      padding: 40px;
+      overflow-y: auto;
+    }
+    .right-panel h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+    }
+    .right-panel p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Left Panel: Photo, Clubs, Achievements & Soccer Team -->
+    <div class="left-panel">
+      <img src="your-face.jpg" alt="Your Face" />
+      <h2>Your Name</h2>
+      <p>Currently studying at <strong>Your School</strong></p>
+      <div class="extra-info">
+        <h3>Clubs</h3>
+        <ul>
+          <li>Science Club</li>
+          <li>Debate Team</li>
+          <li>Art Society</li>
+        </ul>
+        <h3>Achievements</h3>
+        <ul>
+          <li>First Place in Regional Science Fair</li>
+          <li>Winner of National Debate Championship</li>
+        </ul>
+        <h3>Soccer Team</h3>
+        <p>Member of the University Soccer Team</p>
+      </div>
+    </div>
+    
+    <!-- Right Panel: Detailed About Me Narrative -->
+    <div class="right-panel">
+      <h1>About Me</h1>
+      <p>
+        [Your detailed biography goes here. Share your academic journey, personal interests, and career aspirations. This is your chance to let visitors know who you are beyond the clubs and achievements.]
+      </p>
+      <p>
+        Include any hobbies, favorite projects, or unique experiences that make you stand out. Make it personal and engaging!
+      </p>
+    </div>
+  </div>
+  <!-- Universal Footer -->
+<footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li>
+          <a href="mailto:youremail@example.com">
+            Email: youremail@example.com
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/yourinstagram" target="_blank">
+            Instagram: @yourinstagram
+          </a>
+        </li>
+        <li>
+          <a href="https://open.kakao.com/o/yourkakaotalkid" target="_blank">
+            KakaoTalk: yourkakaotalkid
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

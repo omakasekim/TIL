@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - My Portfolio</title>
+  <style>
+    /* Reset & Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Fancy vertically split background using three colors */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(
+        to right,
+        #6a11cb 0%,       /* Left stripe: Purple */
+        #6a11cb 33%,
+        #2575fc 33%,      /* Middle stripe: Blue */
+        #2575fc 66%,
+        #56ab2f 66%,      /* Right stripe: Green */
+        #56ab2f 100%
+      );
+      overflow-x: hidden;
+      /* Ensure content doesn't get hidden behind the fixed footer */
+      padding-bottom: 120px;
+    }
+    
+    /* Fixed Navigation Bar */
+    header {
+      background: #333;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    header nav ul li {
+      margin: 0 15px;
+    }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover {
+      color: #4ca1af;
+    }
+    
+    /* Main Content Container */
+    .container {
+      padding-top: 70px; /* leave room for fixed nav */
+    }
+    
+    /* Section/Card Styling */
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 40px 20px;
+      /* Animation initial state */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Profile Picture Styles */
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #333;
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Loader Styles for Infinite Scroll */
+    .loader {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      color: #666;
+      display: none;
+    }
+    
+    /* Fixed Universal Footer */
+    .footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 200;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .footer-links li {
+      margin: 0 10px;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #4ca1af;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content Container -->
+  <div class="container" id="container">
+    <!-- Section 1: Welcome Section with Profile Picture -->
+    <section class="section" id="section1">
+      <img src="your-face.jpg" alt="Your Face" class="profile-pic" />
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hover over my picture and scroll down for more cool content...</p>
+    </section>
+    
+    <!-- Initial Content Sections -->
+    <section class="section">
+      <h2>About My Journey</h2>
+      <p>This section contains details about my background, experiences, and aspirations.</p>
+    </section>
+    <section class="section">
+      <h2>Featured Projects</h2>
+      <p>Here, you'll find some of the projects I've been proud to work on.</p>
+    </section>
+  </div>
+  
+  <!-- Loader (appears when more content is loading) -->
+  <div class="loader" id="loader">Loading more content...</div>
+  
+  <!-- Fixed Universal Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li>
+          <a href="mailto:youremail@example.com">Email: youremail@example.com</a>
+        </li>
+        <li>
+          <a href="https://instagram.com/yourinstagram" target="_blank">Instagram: @yourinstagram</a>
+        </li>
+        <li>
+          <a href="https://open.kakao.com/o/yourkakaotalkid" target="_blank">KakaoTalk: yourkakaotalkid</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  
+  <!-- JavaScript for Infinite Scroll -->
+  <script>
+    let container = document.getElementById('container');
+    let loader = document.getElementById('loader');
+    let sectionCount = 3; // initially, 3 sections are present
+
+    // Function to create a new section element
+    function createSection(count) {
+      let section = document.createElement('section');
+      section.className = 'section';
+      section.innerHTML = `
+        <h2>Section ${count}</h2>
+        <p>Dynamic content loaded! This is section ${count} of my portfolio.</p>
+      `;
+      return section;
+    }
+    
+    // Function to load more sections
+    function loadMore() {
+      loader.style.display = 'block';
+      setTimeout(() => {
+        sectionCount++;
+        let newSection = createSection(sectionCount);
+        container.appendChild(newSection);
+        loader.style.display = 'none';
+      }, 1000);
+    }
+    
+    // Listen for scroll events to trigger infinite scroll
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100) {
+        loadMore();
+      }
+    });
+  </script>
+</body>
+</html>

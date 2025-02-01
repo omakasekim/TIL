@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - My Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background: #f4f4f4;
+    }
+    /* Fixed Navigation Bar */
+    header {
+      background: #333;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    
+    header nav ul li { margin: 0 15px; }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-links li {
+    margin: 0 10px;
+  }
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: #4ca1af;
+  }
+    header nav ul li a:hover { color: #4ca1af; }
+    
+    /* Page Content */
+    .container {
+      padding: 100px 20px 20px; /* top padding for fixed nav */
+      max-width: 1000px;
+      margin: auto;
+    }
+    .container h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+    }
+    .portfolio-card {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .portfolio-card:hover { transform: translateY(-5px); }
+    .portfolio-card.expanded { background-color: #e0f7fa; }
+    .portfolio-card h2 {
+      font-size: 28px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    .portfolio-card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <h1>My Portfolio</h1>
+    
+    <div class="portfolio-card">
+      <h2>Project/Internship Title 1</h2>
+      <p>
+        Description of project/internship 1. Include details such as technologies used, your role, and any notable achievements.
+      </p>
+    </div>
+    
+    <div class="portfolio-card">
+      <h2>Project/Internship Title 2</h2>
+      <p>
+        Description of project/internship 2. Explain what the project was about, the skills you applied, and what you learned.
+      </p>
+    </div>
+    
+    <div class="portfolio-card">
+      <h2>Project/Internship Title 3</h2>
+      <p>
+        Description of project/internship 3. Provide a brief overview and highlight any significant contributions you made.
+      </p>
+    </div>
+  </div>
+  
+  <!-- JavaScript for Interactive Cards -->
+  <script>
+    document.querySelectorAll('.portfolio-card').forEach(card => {
+      card.addEventListener('click', function() {
+        this.classList.toggle('expanded');
+      });
+    });
+
+
+  </script>
+  <!-- Universal Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <ul class="footer-links">
+      <li>
+        <a href="mailto:youremail@example.com">
+          Email: youremail@example.com
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/yourinstagram" target="_blank">
+          Instagram: @yourinstagram
+        </a>
+      </li>
+      <li>
+        <a href="https://open.kakao.com/o/yourkakaotalkid" target="_blank">
+          KakaoTalk: yourkakaotalkid
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
