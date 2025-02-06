@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
-
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
   File? _profileImage; // Stores the selected/captured image
+  String _username = "Username";
 
   // Function to pick an image from the gallery
   Future<void> _pickImage() async {
@@ -97,18 +97,70 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+  void _showEditUsernameDialog() {
+    TextEditingController usernameController  = TextEditingController(text: _username);
+    
+
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(20),
+          height: 200,
+          child: Column(
+            children: [
+              const Text(
+                "Edit Username",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: usernameController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.brown,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: (){
+                  setState(() {
+                    _username = usernameController.text;
+                  });
+                  Navigator.pop(context);
+
+                },
+                child: const Text("Save Username"),
+              ),
+            ],
+          )
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          const Color.fromRGBO(253, 246, 221, 1), // Yellow background
+      backgroundColor: const Color.fromRGBO(253, 246, 221, 1), // Yellow background
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
           "Profile",
-          style: TextStyle(
-              fontSize: 24, fontWeight: FontWeight.bold, color: Colors.brown),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.brown),
         ),
         centerTitle: true,
       ),
@@ -116,33 +168,63 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Profile Picture (with tap to change)
+            // Profile Picture (Tap to Change)
             GestureDetector(
               onTap: _showImagePickerDialog,
               child: CircleAvatar(
                 radius: 60,
                 backgroundImage: _profileImage != null
                     ? FileImage(_profileImage!) as ImageProvider
-                    : const AssetImage(
-                        'assets/profile_pic.png'), // Default profile picture
+                    : const AssetImage('assets/profile_pic.png'), // Default profile pic
                 backgroundColor: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            // Username (Tap to Edit)
+            GestureDetector(
+              onTap: _showEditUsernameDialog,
+              child: Text(
+                _username,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.brown,
+                ),
               ),
             ),
             const SizedBox(height: 20),
 
-            // Button to Change Picture
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
-                foregroundColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+            // Buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.brown,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: _showImagePickerDialog,
+                  child: const Text("Change Picture"),
                 ),
-              ),
-              onPressed: _showImagePickerDialog,
-              child: const Text("Change Profile Picture"),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.brown,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: _showEditUsernameDialog,
+                  child: const Text("Edit Username"),
+                ),
+              ],
             ),
           ],
         ),
